@@ -269,12 +269,21 @@ export const CategoryService = {
       const local = localStorage.getItem('tok_categories')
       return local ? JSON.parse(local) : mockCategories
     }
-    const { data, error } = await supabase
-      .from('categories')
-      .select('*')
-      .order('sort_order', { ascending: true })
-    if (error) throw error
-    return data || []
+    try {
+      const { data, error } = await supabase
+        .from('categories')
+        .select('*')
+        .order('sort_order', { ascending: true })
+
+      if (error || !data || data.length === 0) {
+        console.warn('Menggunakan fallback data kategori karena Supabase belum di-seed / permission denied:', error?.message)
+        const local = localStorage.getItem('tok_categories')
+        return local ? JSON.parse(local) : mockCategories
+      }
+      return data
+    } catch {
+      return mockCategories
+    }
   },
 
   async getBySlug(slug: string): Promise<Category | null> {
@@ -332,7 +341,7 @@ export const ProductService = {
     featuredOnly?: boolean
     includeInactive?: boolean
   }): Promise<Product[]> {
-    if (!isSupabaseConfigured()) {
+    const getLocalOrMock = () => {
       const local = localStorage.getItem('tok_products')
       let list: Product[] = local ? JSON.parse(local) : mockProducts
 
@@ -355,30 +364,41 @@ export const ProductService = {
       return list
     }
 
-    let query = supabase
-      .from('products')
-      .select('*, category:categories(*)')
-      .is('deleted_at', null)
-      .order('created_at', { ascending: false })
-
-    if (!options?.includeInactive) {
-      query = query.eq('is_active', true)
-    }
-    if (options?.featuredOnly) {
-      query = query.eq('is_featured', true)
-    }
-    if (options?.search) {
-      query = query.ilike('name', `%${options.search}%`)
+    if (!isSupabaseConfigured()) {
+      return getLocalOrMock()
     }
 
-    const { data, error } = await query
-    if (error) throw error
+    try {
+      let query = supabase
+        .from('products')
+        .select('*, category:categories(*)')
+        .is('deleted_at', null)
+        .order('created_at', { ascending: false })
 
-    let result = (data as Product[]) || []
-    if (options?.categorySlug) {
-      result = result.filter((p) => p.category?.slug === options.categorySlug)
+      if (!options?.includeInactive) {
+        query = query.eq('is_active', true)
+      }
+      if (options?.featuredOnly) {
+        query = query.eq('is_featured', true)
+      }
+      if (options?.search) {
+        query = query.ilike('name', `%${options.search}%`)
+      }
+
+      const { data, error } = await query
+      if (error || !data || data.length === 0) {
+        console.warn('Menggunakan fallback produk lokal/mock karena Supabase belum di-seed / permission denied:', error?.message)
+        return getLocalOrMock()
+      }
+
+      let result = (data as Product[]) || []
+      if (options?.categorySlug) {
+        result = result.filter((p) => p.category?.slug === options.categorySlug)
+      }
+      return result
+    } catch {
+      return getLocalOrMock()
     }
-    return result
   },
 
   async getBySlug(slug: string): Promise<Product | null> {
@@ -386,14 +406,22 @@ export const ProductService = {
       const list = await this.getAll({ includeInactive: true })
       return list.find((p) => p.slug === slug) || null
     }
-    const { data, error } = await supabase
-      .from('products')
-      .select('*, category:categories(*)')
-      .eq('slug', slug)
-      .is('deleted_at', null)
-      .maybeSingle()
-    if (error) throw error
-    return data
+    try {
+      const { data, error } = await supabase
+        .from('products')
+        .select('*, category:categories(*)')
+        .eq('slug', slug)
+        .is('deleted_at', null)
+        .maybeSingle()
+      if (error || !data) {
+        const list = await this.getAll({ includeInactive: true })
+        return list.find((p) => p.slug === slug) || null
+      }
+      return data
+    } catch {
+      const list = await this.getAll({ includeInactive: true })
+      return list.find((p) => p.slug === slug) || null
+    }
   },
 
   async getById(id: string): Promise<Product | null> {
