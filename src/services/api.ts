@@ -83,7 +83,7 @@ export const mockCategories: Category[] = [
 
 export const mockProducts: Product[] = [
   {
-    id: 'p1000000-0000-0000-0000-000000000001',
+    id: 'a1000000-0000-0000-0000-000000000001',
     category_id: 'c1000000-0000-0000-0000-000000000001',
     name: 'Adaptor Fast Charger 65W GaN Multi-Port Type-C',
     slug: 'adaptor-fast-charger-65w-gan-multi-port',
@@ -108,7 +108,7 @@ export const mockProducts: Product[] = [
     category: mockCategories[0],
   },
   {
-    id: 'p1000000-0000-0000-0000-000000000002',
+    id: 'a1000000-0000-0000-0000-000000000002',
     category_id: 'c1000000-0000-0000-0000-000000000001',
     name: 'Kabel Data Braided Type-C to Type-C 100W PD 1.5M',
     slug: 'kabel-data-braided-type-c-100w',
@@ -133,7 +133,7 @@ export const mockProducts: Product[] = [
     category: mockCategories[0],
   },
   {
-    id: 'p1000000-0000-0000-0000-000000000003',
+    id: 'a1000000-0000-0000-0000-000000000003',
     category_id: 'c1000000-0000-0000-0000-000000000003',
     name: 'TWS Earphone True Wireless Bluetooth 5.3 Low Latency',
     slug: 'tws-earphone-true-wireless-bluetooth-53',
@@ -158,7 +158,7 @@ export const mockProducts: Product[] = [
     category: mockCategories[2],
   },
   {
-    id: 'p1000000-0000-0000-0000-000000000004',
+    id: 'a1000000-0000-0000-0000-000000000004',
     category_id: 'c1000000-0000-0000-0000-000000000004',
     name: 'Stand Laptop Ergonomis Aluminium Lipat 7 Sudut',
     slug: 'stand-laptop-ergonomis-aluminium-lipat',
@@ -183,7 +183,7 @@ export const mockProducts: Product[] = [
     category: mockCategories[3],
   },
   {
-    id: 'p1000000-0000-0000-0000-000000000005',
+    id: 'a1000000-0000-0000-0000-000000000005',
     category_id: 'c1000000-0000-0000-0000-000000000005',
     name: 'Powerbank Fast Charging 20000mAh 22.5W Digital Display',
     slug: 'powerbank-fast-charging-20000mah-225w',
@@ -208,7 +208,7 @@ export const mockProducts: Product[] = [
     category: mockCategories[4],
   },
   {
-    id: 'p1000000-0000-0000-0000-000000000006',
+    id: 'a1000000-0000-0000-0000-000000000006',
     category_id: 'c1000000-0000-0000-0000-000000000004',
     name: 'Mouse Wireless Silent Click Dual Mode 2.4G & Bluetooth',
     slug: 'mouse-wireless-silent-click-dual-mode',

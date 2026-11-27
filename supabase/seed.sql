@@ -32,7 +32,7 @@ INSERT INTO public.store_settings (
     true
 ) ON CONFLICT DO NOTHING;
 
--- 2. Initial Categories
+-- 2. Initial Categories (Standard Hex UUIDs)
 INSERT INTO public.categories (id, name, slug, description, image_url, sort_order) VALUES
 ('c1000000-0000-0000-0000-000000000001', 'Charger & Kabel', 'charger-kabel', 'Fast charger, kabel data type-c, lightning, micro usb original dan bergaransi.', 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80', 1),
 ('c1000000-0000-0000-0000-000000000002', 'Casing & Tempered Glass', 'casing-tempered-glass', 'Pelindung layar anti gores spy, clear, matte, dan casing hp benturan tinggi.', 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600&auto=format&fit=crop&q=80', 2),
@@ -41,13 +41,13 @@ INSERT INTO public.categories (id, name, slug, description, image_url, sort_orde
 ('c1000000-0000-0000-0000-000000000005', 'Powerbank & Baterai', 'powerbank-baterai', 'Powerbank kapasitas besar 10.000 - 30.000 mAh support Power Delivery dan Quick Charge.', 'https://images.unsplash.com/photo-1609592426507-285640733a87?w=600&auto=format&fit=crop&q=80', 5)
 ON CONFLICT (slug) DO NOTHING;
 
--- 3. Initial Products
+-- 3. Initial Products (Standard Hex UUIDs: a1000000-...)
 INSERT INTO public.products (
     id, category_id, name, slug, sku, description, specifications,
     price, sale_price, stock, low_stock_threshold, main_image_url, is_active, is_featured
 ) VALUES
 (
-    'p1000000-0000-0000-0000-000000000001',
+    'a1000000-0000-0000-0000-000000000001',
     'c1000000-0000-0000-0000-000000000001',
     'Adaptor Fast Charger 65W GaN Multi-Port Type-C',
     'adaptor-fast-charger-65w-gan-multi-port',
@@ -63,7 +63,7 @@ INSERT INTO public.products (
     true
 ),
 (
-    'p1000000-0000-0000-0000-000000000002',
+    'a1000000-0000-0000-0000-000000000002',
     'c1000000-0000-0000-0000-000000000001',
     'Kabel Data Braided Type-C to Type-C 100W PD 1.5M',
     'kabel-data-braided-type-c-100w',
@@ -79,7 +79,7 @@ INSERT INTO public.products (
     true
 ),
 (
-    'p1000000-0000-0000-0000-000000000003',
+    'a1000000-0000-0000-0000-000000000003',
     'c1000000-0000-0000-0000-000000000003',
     'TWS Earphone True Wireless Bluetooth 5.3 Low Latency',
     'tws-earphone-true-wireless-bluetooth-53',
@@ -95,7 +95,7 @@ INSERT INTO public.products (
     true
 ),
 (
-    'p1000000-0000-0000-0000-000000000004',
+    'a1000000-0000-0000-0000-000000000004',
     'c1000000-0000-0000-0000-000000000004',
     'Stand Laptop Ergonomis Aluminium Lipat 7 Sudut',
     'stand-laptop-ergonomis-aluminium-lipat',
@@ -111,7 +111,7 @@ INSERT INTO public.products (
     true
 ),
 (
-    'p1000000-0000-0000-0000-000000000005',
+    'a1000000-0000-0000-0000-000000000005',
     'c1000000-0000-0000-0000-000000000005',
     'Powerbank Fast Charging 20000mAh 22.5W Digital Display',
     'powerbank-fast-charging-20000mah-225w',
@@ -127,7 +127,7 @@ INSERT INTO public.products (
     false
 ),
 (
-    'p1000000-0000-0000-0000-000000000006',
+    'a1000000-0000-0000-0000-000000000006',
     'c1000000-0000-0000-0000-000000000004',
     'Mouse Wireless Silent Click 2.4GHz + Bluetooth Dual Mode',
     'mouse-wireless-silent-click-dual-mode',
