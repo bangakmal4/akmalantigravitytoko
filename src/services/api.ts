@@ -8,7 +8,7 @@ export const mockStoreSettings: StoreSettings = {
   tagline: 'Belanja lengkap, murah, terjangkau dan terpercaya',
   logo_url: '/logo.svg',
   store_description: 'Pusat aksesoris smartphone dan laptop terlengkap, termurah, original dan bergaransi.',
-  whatsapp_number: '6281234567890',
+  whatsapp_number: '6282369310034',
   email: 'kontak@tokoakmal.com',
   address: 'Pertokoan Niaga Utama Blok C No. 15, Jl. Pemuda Raya, Jakarta',
   opening_hours: 'Senin - Sabtu: 09:00 - 21:00 WIB, Minggu: 10:00 - 18:00 WIB',

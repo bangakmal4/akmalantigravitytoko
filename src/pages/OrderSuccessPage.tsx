@@ -17,7 +17,7 @@ export const OrderSuccessPage: React.FC = () => {
   }
 
   const waMessage = `Halo Toko Akmal, saya sudah membuat pesanan dengan No. Pesanan ${state.orderNumber}. Mohon bantuannya untuk proses selanjutnya. Terima kasih!`
-  const waUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(waMessage)}`
+  const waUrl = `https://wa.me/6282369310034?text=${encodeURIComponent(waMessage)}`
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-16 space-y-8 text-center">

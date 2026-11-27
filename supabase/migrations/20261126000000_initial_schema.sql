@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS public.store_settings (
     tagline TEXT NOT NULL DEFAULT 'Belanja lengkap, murah, terjangkau dan terpercaya',
     logo_url TEXT,
     store_description TEXT,
-    whatsapp_number TEXT NOT NULL DEFAULT '6281234567890',
+    whatsapp_number TEXT NOT NULL DEFAULT '6282369310034',
     email TEXT NOT NULL DEFAULT 'kontak@tokoakmal.com',
     address TEXT NOT NULL DEFAULT 'Jl. Raya Utama No. 123, Indonesia',
     opening_hours TEXT NOT NULL DEFAULT 'Senin - Minggu: 09:00 - 21:00 WIB',

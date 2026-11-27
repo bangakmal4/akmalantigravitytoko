@@ -34,13 +34,13 @@ export const Header: React.FC = () => {
             </Link>
             <span className="hidden md:inline text-slate-600">|</span>
             <a
-              href="https://wa.me/6281234567890"
+              href="https://wa.me/6282369310034"
               target="_blank"
               rel="noreferrer"
               className="hidden md:flex items-center gap-1 hover:text-white"
             >
               <PhoneCall className="w-3 h-3 text-emerald-400" />
-              CS WhatsApp: 0812-3456-7890
+              CS WhatsApp: 0823-6931-0034
             </a>
           </div>
         </div>

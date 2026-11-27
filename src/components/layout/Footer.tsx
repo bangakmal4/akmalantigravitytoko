@@ -90,8 +90,8 @@ export const Footer: React.FC = () => {
             </li>
             <li className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-              <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" className="hover:text-white">
-                0812-3456-7890 (WhatsApp)
+              <a href="https://wa.me/6282369310034" target="_blank" rel="noreferrer" className="hover:text-white">
+                0823-6931-0034 (WhatsApp)
               </a>
             </li>
             <li className="flex items-center gap-2">

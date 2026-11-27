@@ -20,7 +20,7 @@ INSERT INTO public.store_settings (
 ) VALUES (
     'Toko Akmal Accessories HP & Laptop',
     'Belanja lengkap, murah, terjangkau dan terpercaya',
-    '6281234567890',
+    '6282369310034',
     'kontak@tokoakmal.com',
     'Pertokoan Niaga Utama Blok C No. 15, Jl. Pemuda Raya, Jakarta',
     'Senin - Sabtu: 09:00 - 21:00 WIB, Minggu: 10:00 - 18:00 WIB',

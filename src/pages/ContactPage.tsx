@@ -29,7 +29,7 @@ export const ContactPage: React.FC = () => {
               <Phone className="w-5 h-5 text-emerald-600 shrink-0" />
               <div>
                 <strong className="text-navy block">WhatsApp / Telepon:</strong>
-                0812-3456-7890
+                0823-6931-0034
               </div>
             </div>
 
@@ -51,7 +51,7 @@ export const ContactPage: React.FC = () => {
           </div>
 
           <a
-            href="https://wa.me/6281234567890?text=Halo%20Toko%20Akmal,%20saya%20ingin%20tanya%20produk%20aksesoris"
+            href="https://wa.me/6282369310034?text=Halo%20Toko%20Akmal,%20saya%20ingin%20tanya%20produk%20aksesoris"
             target="_blank"
             rel="noreferrer"
             className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-md"
